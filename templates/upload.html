@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>PDF Upload</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload your PDF file</h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <input type="file" name="pdfFile" id="pdfFile" accept=".pdf" required>
+            <br>
+            <button type="submit">Upload</button>
+            <p><a href="{{ url_for('uploaded_files') }}">View uploaded files</a></p>
+
+        </form>
+    </div>
+</body>
+</html>
+
+   
+
+
+
+
+
