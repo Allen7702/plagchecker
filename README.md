@@ -1,1 +1,1 @@
-# plagchecker
+# plagiarism Checker
